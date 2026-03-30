@@ -191,7 +191,7 @@ Navigate to: `http://localhost:5001/api-docs/`
 | Component | URL |
 |-----------|-----|
 | Swagger UI | `https://<your-app-runner-url>/api-docs` |
-| GitHub Repo | `https://github.com/<your-username>/lodgestack-api` |
+| GitHub Repo | `https://github.com/bbgmfun/lodgestack-api` |
 | Video Presentation | `<your-video-link>` |
 
 ## Load Testing
