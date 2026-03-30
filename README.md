@@ -243,6 +243,13 @@ The following values are from a local `k6` run on March 30, 2026 against `http:/
 - The failing threshold was `http_req_failed` with an error rate of `49.83%`. This was mainly caused by the booking scenario in the `k6` script generating many expected unsuccessful booking attempts under concurrent access, which `k6` still counts as failed HTTP requests.
 - In other words, the run shows strong response-time performance, but the current load-test design inflates the failure metric. A better benchmark would isolate search traffic from booking-conflict traffic or use unique listing/date combinations per virtual user.
 
+### Load Test Evidence
+
+Add a screenshot or graph of the `k6` output here before final submission.
+
+- Suggested file name: `docs/assets/k6-results.png`
+- Suggested content: terminal output showing `avg`, `p95`, `requests/sec`, and `error rate`
+
 ## Issues Encountered
 
 1. `GET /api/v1/listings/search` initially returned `500 Internal Server Error` because dates coming from Swagger were bound as `DateTimeKind.Unspecified`, while PostgreSQL (`timestamp with time zone`) expects UTC values.
@@ -250,5 +257,14 @@ The following values are from a local `k6` run on March 30, 2026 against `http:/
 3. Swagger UI behaved more reliably with `http://localhost:5001/api-docs/` including the trailing slash.
 
 ## Video Presentation
+
+Suggested demo flow for a 3-5 minute recording:
+
+1. Show the GitHub repository and README overview.
+2. Show the architecture/data model section briefly.
+3. Open deployed Swagger JSON or local Swagger and explain the available endpoints.
+4. Demonstrate the main flow: register/login, create listing, query listings, book a stay, review a stay.
+5. Show the Azure deployment URLs.
+6. Show the `k6` load-test results and summarize the performance observations.
 
 [Link to video presentation](<your-video-link>)
