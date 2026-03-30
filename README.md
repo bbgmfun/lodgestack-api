@@ -197,6 +197,7 @@ Example booking response captured from Swagger UI:
 | Component | URL |
 |-----------|-----|
 | StayAPI (Azure) | `https://stayapi-app.mangowater-b28dd996.swedencentral.azurecontainerapps.io` |
+| StayAPI Swagger UI | `https://stayapi-app.mangowater-b28dd996.swedencentral.azurecontainerapps.io/swagger` |
 | StayAPI Swagger JSON | `https://stayapi-app.mangowater-b28dd996.swedencentral.azurecontainerapps.io/swagger/v1/swagger.json` |
 | API Gateway (Azure) | `https://gateway-app.mangowater-b28dd996.swedencentral.azurecontainerapps.io` |
 | Gateway Swagger JSON | `https://gateway-app.mangowater-b28dd996.swedencentral.azurecontainerapps.io/swagger/v1/swagger.json` |
