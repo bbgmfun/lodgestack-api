@@ -186,6 +186,12 @@ dotnet run --urls http://localhost:5000
 ### Swagger UI
 Navigate to: `http://localhost:5001/api-docs/`
 
+### Swagger Evidence
+
+Example booking response captured from Swagger UI:
+
+![Swagger booking response](docs/assets/swagger-booking-response.png)
+
 ## Deployed URLs
 
 | Component | URL |
@@ -245,10 +251,9 @@ The following values are from a `k6` run on March 30, 2026 using the included mu
 
 ### Load Test Evidence
 
-Add a screenshot or graph of the `k6` output here before final submission.
+The following screenshot shows the terminal output of the `k6` run used for the metrics above:
 
-- Suggested file name: `docs/assets/k6-results.png`
-- Suggested content: terminal output showing `avg`, `p95`, `requests/sec`, and `error rate`
+![k6 load test results](docs/assets/k6-results.png)
 
 ## Issues Encountered
 
