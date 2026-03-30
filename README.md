@@ -262,15 +262,6 @@ The following screenshot shows the terminal output of the `k6` run used for the 
 2. The same date-handling issue could affect booking queries. It was fixed by normalizing incoming dates to UTC in the service layer before querying or saving.
 3. Swagger UI behaved more reliably with `http://localhost:5001/api-docs/` including the trailing slash.
 
-## Video Presentation
 
-Suggested demo flow for a 3-5 minute recording:
 
-1. Show the GitHub repository and README overview.
-2. Show the architecture/data model section briefly.
-3. Open deployed Swagger JSON or local Swagger and explain the available endpoints.
-4. Demonstrate the main flow: register/login, create listing, query listings, book a stay, review a stay.
-5. Show the Azure deployment URLs.
-6. Show the `k6` load-test results and summarize the performance observations.
 
-[Link to video presentation](<your-video-link>)
