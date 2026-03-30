@@ -18,12 +18,12 @@ This project implements a backend API for a fictitious short-term stay company (
 | Component | Technology |
 |-----------|-----------|
 | Backend | .NET 8 Web API (C#) |
-| Database | PostgreSQL |
+| Database | Azure Database for PostgreSQL Flexible Server |
 | Authentication | JWT Bearer Token |
 | API Gateway | Ocelot (with Rate Limiting) |
 | API Docs | Swagger / OpenAPI |
 | Containerization | Docker + Docker Compose |
-| Cloud Hosting | AWS App Runner |
+| Cloud Hosting | Azure Container Apps + Azure Container Registry |
 | Load Testing | k6 |
 
 ## Architecture
@@ -190,7 +190,10 @@ Navigate to: `http://localhost:5001/api-docs/`
 
 | Component | URL |
 |-----------|-----|
-| Swagger UI | `https://<your-app-runner-url>/api-docs` |
+| StayAPI (Azure) | `https://stayapi-app.mangowater-b28dd996.swedencentral.azurecontainerapps.io` |
+| StayAPI Swagger JSON | `https://stayapi-app.mangowater-b28dd996.swedencentral.azurecontainerapps.io/swagger/v1/swagger.json` |
+| API Gateway (Azure) | `https://gateway-app.mangowater-b28dd996.swedencentral.azurecontainerapps.io` |
+| Gateway Swagger JSON | `https://gateway-app.mangowater-b28dd996.swedencentral.azurecontainerapps.io/swagger/v1/swagger.json` |
 | GitHub Repo | `https://github.com/bbgmfun/lodgestack-api` |
 | Video Presentation | `<your-video-link>` |
 
