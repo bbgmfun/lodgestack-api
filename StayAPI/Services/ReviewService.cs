@@ -16,7 +16,6 @@ public class ReviewService : IReviewService
 
     public async Task<StatusResponseDto> ReviewStay(ReviewStayDto dto, int guestUserId)
     {
-        // Validate booking exists and belongs to the user
         var booking = await _context.Bookings
             .Include(b => b.Listing)
             .FirstOrDefaultAsync(b => b.Id == dto.BookingId);
@@ -24,16 +23,13 @@ public class ReviewService : IReviewService
         if (booking == null)
             return new StatusResponseDto { Status = "Error", Message = "Booking not found" };
 
-        // Only those who book a stay can review
         if (booking.GuestUserId != guestUserId)
             return new StatusResponseDto { Status = "Error", Message = "You can only review your own bookings" };
 
-        // Check if already reviewed
         var existingReview = await _context.Reviews.AnyAsync(r => r.BookingId == dto.BookingId);
         if (existingReview)
             return new StatusResponseDto { Status = "Error", Message = "This booking has already been reviewed" };
 
-        // Validate rating range
         if (dto.Rating < 1 || dto.Rating > 5)
             return new StatusResponseDto { Status = "Error", Message = "Rating must be between 1 and 5" };
 
