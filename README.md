@@ -221,26 +221,26 @@ k6 run k6/load-test.js
 
 ### Load Test Results
 
-The following values are from a local `k6` run on March 30, 2026 against `http://localhost:5001` using the included multi-stage scenario set (20, 50, and 100 VUs).
+The following values are from a `k6` run on March 30, 2026 using the included multi-stage scenario set (20, 50, and 100 VUs).
 
 | Metric | Result |
 |--------|--------|
-| Avg Response Time | 9.32 ms |
-| Median Response Time | 6.63 ms |
-| P90 Response Time | 21.71 ms |
-| P95 Response Time | 27.56 ms |
-| Max Response Time | 187.2 ms |
-| Requests/sec | 100.81 req/s |
+| Avg Response Time | 4.66 ms |
+| Median Response Time | 2.31 ms |
+| P90 Response Time | 11.28 ms |
+| P95 Response Time | 15.27 ms |
+| Max Response Time | 122.32 ms |
+| Requests/sec | 101.41 req/s |
 | Total Requests | 10,214 |
-| Error Rate | 49.83% |
+| Error Rate | 49.95% |
 | Total Iterations | 5,100 |
 | Max Virtual Users | 150 |
 
 ### Analysis
 
-- The API met the latency target comfortably: `p95 = 27.56 ms`, which is well below the configured threshold of `2000 ms`.
-- Throughput was stable at about `100.81 req/s` during the combined normal, peak, and stress scenarios.
-- The failing threshold was `http_req_failed` with an error rate of `49.83%`. This was mainly caused by the booking scenario in the `k6` script generating many expected unsuccessful booking attempts under concurrent access, which `k6` still counts as failed HTTP requests.
+- The API met the latency target comfortably: `p95 = 15.27 ms`, which is well below the configured threshold of `2000 ms`.
+- Throughput was stable at about `101.41 req/s` during the combined normal, peak, and stress scenarios.
+- The failing threshold was `http_req_failed` with an error rate of `49.95%`. This was mainly caused by the booking scenario in the `k6` script generating many expected unsuccessful booking attempts under concurrent access, which `k6` still counts as failed HTTP requests.
 - In other words, the run shows strong response-time performance, but the current load-test design inflates the failure metric. A better benchmark would isolate search traffic from booking-conflict traffic or use unique listing/date combinations per virtual user.
 
 ### Load Test Evidence
